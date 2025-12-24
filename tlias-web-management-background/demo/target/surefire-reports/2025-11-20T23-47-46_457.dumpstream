@@ -1,0 +1,5 @@
+# Created at 2025-11-20T23:47:46.745
+Boot Manifest-JAR contains absolute paths in classpath 'D:\SpringBootDemo-Practice\Demo04-telias\demo\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    #数据库连接配置
+    url: jdbc:mysql://192.168.12.131:3306/db01?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    username: root
+    password: wangxu8044
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # ========== 连接池配置 ==========
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 10
+      minimum-idle: 5
+  # ========== 上传文件配置 ==========
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+        
+  # ========== 开发调试配置 ==========
+  main:
+    allow-bean-definition-overriding: true
+
+# ========== MyBatis 配置 ==========
+mybatis:
+  # 指定MyBatis mapper文件位置
+  mapper-locations:
+  - classpath:mapper/*.xml
+  # 指定实体类包名
+  type-aliases-package: com.example.demo.model
+  # 开启驼峰命名转换
+  configuration:
+    map-underscore-to-camel-case: true
+    # 移除重复的日志实现配置，统一使用logback
+    
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: java-springboot-demo
+    region: cn-beijing
+
+# ========== Web服务器配置 ==========
+server:
+  port: 8080
